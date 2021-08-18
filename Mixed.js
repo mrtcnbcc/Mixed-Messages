@@ -1,12 +1,16 @@
 const allMovies = {
-    horrorGenre: ["PSYCHO (1960) by Alfred Hitcock", "THE SILENCE OF THE LAMBS (1991) by Jonathan Demme"],
-    animatedGenre: ["Attack on Titan", "Gintama", "Black Clover"],
-    fantasyGenre: ["The Lord of the Rings", "Star Wars", "Harry Potter"],
-    actionGenre: ["Hello"] 
-    
+    horrorGenre: ["PSYCHO", "THE SILENCE OF THE LAMBS", "Carrie", "It", "A Nightmare on Elm Street", "The Ring", "Scream"],
+    animatedGenre: ["Attack on Titan", "Gintama", "Black Clover", "My Neighbor Totoro", "Spirited Away", "Princess Mononoke"],
+    fantasyGenre: ["The Lord of the Rings", "Star Wars", "Harry Potter", "Jumanji", "X-Man", "The Seventh Seal", "Pan’s Labyrinth", "The NeverEnding Story"],
+    actionGenre: ["Venom", "Tenet", "Monster Hunter", "Deadpool", "Spider-Man", "Train to Busan", "Lucy", "John Wick", "Avengers", "Tomb Raider"] 
     
     }
 
+const allBooks = {
+    educationalBooks: ["Educated", "Invaluable", "The School of Life", "Introducing Sociology"],
+    comicBooks: ["300", "Astro City", "Batman: The Dark Knight Returns", "City of Glass", "Hellboy", "Invincible"],
+    mysteriesBooks: ["And Then There Were None",  "The Big Sleep", "Gone Girl", "The Postman Always Rings Twice", " Woman in White", "Anatomy of a Murder" ]
+}
 const randomNumberGenerator = (arrLength) => Math.floor(Math.random()*arrLength);
 
 
@@ -38,13 +42,14 @@ const randomKeySelector = function(obj) {
 }
 };
 
-const randomMovieSelector = function(genre) {
+const randomRecommendationSelector = function(genre) {
     
        let choosenKey = randomKeySelector(genre);
        let choosenGenre = randomNumberGenerator(genre[choosenKey].length);
-       return console.log("Today's recommendation to watch: " +  genre[choosenKey][choosenGenre])
+       return console.log("Today's recommendation to check out: " +  genre[choosenKey][choosenGenre]);
     
 }
 
 
-randomMovieSelector(allMovies);
+randomRecommendationSelector(allMovies);
+randomRecommendationSelector(allBooks);
